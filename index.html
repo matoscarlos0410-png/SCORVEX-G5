@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SCORVEX V5 - Ultimate Arena</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- =========================
+       BOOT
+  ========================== -->
+  <div id="bootScreen" class="screen">
+    <div class="boot-logo">SCORVEX</div>
+    <div class="boot-version">V5 // ULTIMATE ARENA</div>
+
+    <div class="loading-box">
+      <div id="loadingBar"></div>
+    </div>
+
+    <p id="loadingText">Cargando sistema...</p>
+  </div>
+
+
+  <!-- =========================
+       MENÚ PRINCIPAL
+  ========================== -->
+  <main id="mainMenu" class="screen hidden">
+
+    <header class="main-header">
+
+      <div class="brand">
+        <h1>SCORVEX</h1>
+        <span>V5 // ULTIMATE ARENA</span>
+      </div>
+
+      <div class="header-actions">
+        <button id="musicBtn" class="icon-btn">🎵</button>
+        <button id="soundBtn" class="icon-btn">🔊</button>
+      </div>
+
+    </header>
+
+
+    <section class="hero">
+
+      <div class="hero-content">
+
+        <div class="hero-badge">
+          SYSTEM ONLINE
+        </div>
+
+        <h2>ULTIMATE ARENA</h2>
+
+        <p>
+          Entra en la arena, consigue equipamiento,
+          desbloquea habilidades y supera todos los sectores.
+        </p>
+
+        <button id="playBtn" class="primary-btn">
+          ⚔️ ENTRAR A LA ARENA
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <section class="feature-grid">
+
+      <article class="feature-card">
+        <div class="feature-icon">🔫</div>
+        <h3>ARSENAL</h3>
+        <p>Más de 20 armas futuristas para desbloquear.</p>
+      </article>
+
+      <article class="feature-card">
+        <div class="feature-icon">⚡</div>
+        <h3>HABILIDADES</h3>
+        <p>Desbloquea habilidades especiales y poderes.</p>
+      </article>
+
+      <article class="feature-card">
+        <div class="feature-icon">🛡️</div>
+        <h3>EQUIPAMIENTO</h3>
+        <p>Armaduras, cascos, guantes, botas y núcleos.</p>
+      </article>
+
+      <article class="feature-card">
+        <div class="feature-icon">🎒</div>
+        <h3>INVENTARIO</h3>
+        <p>Organiza todos tus objetos y equipamiento.</p>
+      </article>
+
+    </section>
+
+
+    <section class="rarity-preview">
+
+      <h3>RAREZAS</h3>
+
+      <div class="rarity-list">
+        <span class="common">COMÚN</span>
+        <span class="rare">RARO</span>
+        <span class="epic">ÉPICO</span>
+        <span class="legendary">LEGENDARIO</span>
+        <span class="mythic">MÍTICO</span>
+        <span class="omega">OMEGA</span>
+      </div>
+
+    </section>
+
+
+    <div class="music-info">
+      🎵 MÚSICA: <strong>SYNTHWAVE BATTLE</strong>
+    </div>
+
+  </main>
+
+
+  <!-- =========================
+       JUEGO
+  ========================== -->
+  <main id="gameScreen" class="game-screen hidden">
+
+    <header class="game-topbar">
+
+      <div class="game-logo">
+        SCORVEX <span>V5</span>
+      </div>
+
+      <div class="sector-title">
+        SECTOR <strong id="sectorValue">1</strong>
+      </div>
+
+      <div class="game-actions">
+
+        <button id="musicGameBtn" class="icon-btn">
+          🎵
+        </button>
+
+        <button id="pauseBtn" class="icon-btn">
+          ⏸️
+        </button>
+
+        <button id="menuBtn" class="icon-btn">
+          🏠
+        </button>
+
+      </div>
+
+    </header>
+
+
+    <!-- =========================
+         HUD PRINCIPAL
+    ========================== -->
+
+    <section class="hud">
+
+      <div class="hud-box">
+        <span>❤️ VIDA</span>
+        <strong id="hpValue">100</strong>
+
+        <div class="bar">
+          <div id="hpBar" class="bar-fill hp"></div>
+        </div>
+      </div>
+
+
+      <div class="hud-box">
+        <span>⚡ ENERGÍA</span>
+        <strong id="energyValue">100</strong>
+
+        <div class="bar">
+          <div id="energyBar" class="bar-fill energy"></div>
+        </div>
+      </div>
+
+
+      <div class="hud-box">
+        <span>⭐ EXPERIENCIA</span>
+        <strong id="xpValue">0</strong>
+
+        <div class="bar">
+          <div id="xpBar" class="bar-fill xp"></div>
+        </div>
+      </div>
+
+
+      <div class="hud-box">
+        <span>💰 MONEDAS</span>
+        <strong id="coinsValue">0</strong>
+      </div>
+
+
+      <div class="hud-box">
+        <span>💎 CRISTALES</span>
+        <strong id="crystalsValue">0</strong>
+      </div>
+
+
+      <div class="hud-box">
+        <span>🏆 PUNTOS</span>
+        <strong id="scoreValue">0</strong>
+      </div>
+
+
+      <div class="hud-box">
+        <span>🔥 COMBO</span>
+        <strong id="comboValue">x1</strong>
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         EQUIPAMIENTO ACTIVO
+    ========================== -->
+
+    <section class="loadout">
+
+      <div class="equipment-box">
+
+        <span>🔫 ARMA</span>
+
+        <strong id="weaponName">
+          NOVA BLADE
+        </strong>
+
+        <small id="weaponStats">
+          DAÑO 24
+        </small>
+
+      </div>
+
+
+      <div class="equipment-box">
+
+        <span>⚡ HABILIDAD</span>
+
+        <strong id="abilityName">
+          NOVA
+        </strong>
+
+        <small id="abilityStatus">
+          LISTA
+        </small>
+
+      </div>
+
+
+      <div class="equipment-box">
+
+        <span>🛡️ ARMADURA</span>
+
+        <strong id="armorName">
+          SIN ARMADURA
+        </strong>
+
+        <small id="armorStats">
+          DEFENSA 0
+        </small>
+
+      </div>
+
+
+      <div class="equipment-box">
+
+        <span>🩹 BOTIQUINES</span>
+
+        <strong id="medkitValue">
+          0
+        </strong>
+
+        <small>
+          TECLA H
+        </small>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         MISIÓN
+    ========================== -->
+
+    <section class="mission-panel">
+
+      <div>
+        <span>MISIÓN ACTUAL</span>
+        <strong id="missionText">
+          Elimina a los enemigos
+        </strong>
+      </div>
+
+
+      <div>
+        <span>OLEADA</span>
+        <strong id="waveValue">
+          1
+        </strong>
+      </div>
+
+
+      <div>
+        <span>NIVEL</span>
+        <strong id="levelValue">
+          1
+        </strong>
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         JEFE
+    ========================== -->
+
+    <section id="bossPanel" class="boss-panel hidden">
+
+      <div class="boss-title">
+        ☠️ JEFE DETECTADO
+      </div>
+
+      <strong id="bossName">
+        GUARDIÁN SCORVEX
+      </strong>
+
+      <div class="boss-bar">
+        <div id="bossBarFill"></div>
+      </div>
+
+      <span id="bossHpText">
+        1000 / 1000
+      </span>
+
+    </section>
+
+
+    <!-- =========================
+         ARENA
+    ========================== -->
+
+    <section class="arena-wrapper">
+
+      <canvas
+        id="gameCanvas"
+        width="1100"
+        height="650">
+      </canvas>
+
+      <div class="arena-overlay">
+        <span id="sectorBanner">
+          SECTOR 1
+        </span>
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTROLES
+    ========================== -->
+
+    <section class="controls">
+
+      <div>
+        <kbd>W</kbd>
+        <kbd>A</kbd>
+        <kbd>S</kbd>
+        <kbd>D</kbd>
+        MOVER
+      </div>
+
+      <div>
+        <kbd>ESPACIO</kbd>
+        ATACAR
+      </div>
+
+      <div>
+        <kbd>Q</kbd>
+        HABILIDAD
+      </div>
+
+      <div>
+        <kbd>H</kbd>
+        BOTIQUÍN
+      </div>
+
+      <div>
+        <kbd>I</kbd>
+        INVENTARIO
+      </div>
+
+      <div>
+        <kbd>B</kbd>
+        TIENDA
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         ACCIONES
+    ========================== -->
+
+    <section class="bottom-actions">
+
+      <button id="inventoryBtn" class="action-btn">
+        🎒 INVENTARIO
+      </button>
+
+      <button id="shopBtn" class="action-btn">
+        🛒 TIENDA
+      </button>
+
+      <button id="mapBtn" class="action-btn">
+        🗺️ MAPA
+      </button>
+
+      <button id="missionsBtn" class="action-btn">
+        🎯 MISIONES
+      </button>
+
+      <button id="saveBtn" class="action-btn">
+        💾 GUARDAR
+      </button>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       MODAL GENERAL
+  ========================== -->
+
+  <div id="modal" class="modal hidden">
+
+    <div class="modal-content">
+
+      <button id="closeModal" class="close-btn">
+        ✕
+      </button>
+
+      <h2 id="modalTitle">
+        INVENTARIO
+      </h2>
+
+      <div id="modalBody"></div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================
+       PAUSA
+  ========================== -->
+
+  <div id="pauseModal" class="modal hidden">
+
+    <div class="modal-content pause-content">
+
+      <h2>
+        ⏸️ JUEGO EN PAUSA
+      </h2>
+
+      <button id="resumeBtn" class="primary-btn">
+        ▶ CONTINUAR
+      </button>
+
+      <button id="pauseMenuBtn" class="secondary-btn">
+        🏠 MENÚ PRINCIPAL
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================
+       NOTIFICACIONES
+  ========================== -->
+
+  <div id="notificationContainer"></div>
+
+
+  <!-- =========================
+       SCRIPT
+  ========================== -->
+
+  <script src="game.js"></script>
+
+</body>
+</html>
